@@ -8,8 +8,7 @@ Configure services as Doctrine domain event listeners.
 ### Step 1: Add to composer.json
 
 ```json
-"require" :  {
-    // ...
+"require":  {
     "astina/domain-events-bundle":"dev-master",
 }
 ```
@@ -35,6 +34,18 @@ public function registerBundles()
 
 Create subscriber service:
 
+```php
+class ProductSupplyWatcher
+{
+    public function preUpdate(ProductSupply $supply, PreUpdateEventArgs $event)
+    {
+        // do stuff
+    }
+}
+
+```
+Read more about the (optional) $event parameter in the [Doctrine documentation about Entity Listeners](https://doctrine-orm.readthedocs.org/en/latest/reference/events.html?highlight=events#entity-listeners).
+
 ```yml
 <service id="product_supply_watcher" class="Astina\Bundle\SandboxBundle\Foo\ProductSupplyWatcher">
     <argument type="service" id="some_service" />
@@ -51,6 +62,8 @@ astina_domain_events:
             events: [ preUpdate ] # list of events to listen to
 ```
 
+Note that the method name in the subscriber service corresponds with the event name.
+
 Available events:
 - prePersist
 - postPersist
@@ -60,10 +73,6 @@ Available events:
 - postRemove
 - preFlush
 - postLoad
-
-##Further Reading
-
-Doctrine Entity Listeners: [https://doctrine-orm.readthedocs.org/en/latest/reference/events.html?highlight=events#entity-listeners]
 
 ##Todo
 Add possibility to subscribe to changes on specific fields.
