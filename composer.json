@@ -5,7 +5,7 @@
     "authors": [
         {
             "name": "Astina",
-            "homepage": "https://github.com/astina/AstinaInjectionBundle/contributors"
+            "homepage": "https://github.com/astina/AstinaDomainEventsBundle/contributors"
         }
     ],
     "type": "symfony-bundle",
