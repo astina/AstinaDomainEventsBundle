@@ -1,0 +1,21 @@
+{
+    "name": "astina/domain-events-bundle",
+    "description": "Configure services as Doctrine domain event listeners.",
+    "homepage": "https://github.com/astina/AstinaDomainEventsBundle",
+    "authors": [
+        {
+            "name": "Astina",
+            "homepage": "https://github.com/astina/AstinaInjectionBundle/contributors"
+        }
+    ],
+    "type": "symfony-bundle",
+    "require": {
+        "doctrine/doctrine-bundle": "dev-entity_listener_resolver"
+    },
+    "autoload": {
+        "psr-0": {
+            "Astina\\Bundle\\DomainEventsBundle": ""
+        }
+    },
+    "target-dir": "Astina/Bundle/DomainEventsBundle"
+}

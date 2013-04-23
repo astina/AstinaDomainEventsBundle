@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="astina_domain_events.entity_listener.class">Astina\Bundle\DomainEventsBundle\Doctrine\EntityListener</parameter>
+        <parameter key="astina_domain_events.entity_listener_resolver.class">Astina\Bundle\DomainEventsBundle\Doctrine\EntityListenerResolver</parameter>
+        <parameter key="astina_domain_events.metadata_listener.class">Astina\Bundle\DomainEventsBundle\Doctrine\MetadataListener</parameter>
+    </parameters>
+
+    <services>
+        <service id="astina_domain_events.entity_listener" class="%astina_domain_events.entity_listener.class%" />
+        <service id="astina_domain_events.entity_listener_resolver" class="%astina_domain_events.entity_listener_resolver.class%">
+            <argument type="service" id="astina_domain_events.entity_listener" />
+        </service>
+        <service id="astina_domain_events.metadata_listener" class="%astina_domain_events.metadata_listener.class%">
+            <tag name="doctrine.event_listener" event="loadClassMetadata" />
+        </service>
+    </services>
+</container>
