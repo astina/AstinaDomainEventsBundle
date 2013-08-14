@@ -10,7 +10,7 @@
     ],
     "type": "symfony-bundle",
     "require": {
-        "doctrine/doctrine-bundle": "dev-entity_listener_resolver"
+        "doctrine/doctrine-bundle": "dev-master"
     },
     "autoload": {
         "psr-0": {
