@@ -3,6 +3,8 @@ Astina Domain Events Bundle
 
 Configure services as Doctrine domain event listeners.
 
+**Note**: this bundle is not production ready as it requires the master version of DoctrineBundle.
+
 ## Installation
 
 ### Step 1: Add to composer.json
