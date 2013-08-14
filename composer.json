@@ -8,7 +8,7 @@
             "homepage": "https://github.com/astina/AstinaDomainEventsBundle/contributors"
         }
     ],
-    "licence": "MIT",
+    "license": "MIT",
     "type": "symfony-bundle",
     "require": {
         "doctrine/doctrine-bundle": "dev-master"
